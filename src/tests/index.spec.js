@@ -18,6 +18,16 @@ test("The Author List", async ({ page }) => {
   await expect(authorsCounts).toEqual(10);
 });
 
-test("Author Details", async ({ page }) => {});
+test("Author Details", async ({ page }) => {
+  await page.goto("http://localhost:3000/");
+
+  // * URL Redirect
+  await page.locator(".author-link").first().click();
+  await expect(page.url()).toBe("http://localhost:3000/1");
+
+  // * Page Title
+  const title = page.locator(".author-title");
+  await expect(title).toHaveText("Leanne Graham");
+});
 
 test("Searching for author", async ({ page }) => {});

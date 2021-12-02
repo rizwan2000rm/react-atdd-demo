@@ -9,7 +9,9 @@ const Author = ({ author, idx }) => {
         alt="avatar"
       />
       <div className="author-info">
-        <Link to={"/" + idx}>{author.name}</Link>
+        <Link to={"/" + idx} className="author-link">
+          {author.name}
+        </Link>
         <p>{author.email}</p>
       </div>
     </div>

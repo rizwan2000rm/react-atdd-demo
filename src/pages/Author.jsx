@@ -19,7 +19,7 @@ const Author = () => {
         alt="avatar"
       />
       <div className="author-info">
-        <h3>{author?.name}</h3>
+        <h3 className="author-title">{author?.name}</h3>
         <p>{author?.email}</p>
       </div>
     </div>
